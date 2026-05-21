@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { LenisProvider } from "@/components/LenisProvider";
+import { PageLoader } from "@/components/PageLoader";
 
 import appCss from "../styles.css?url";
 
@@ -69,6 +70,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <LenisProvider>
+      <PageLoader />
       <Outlet />
     </LenisProvider>
   );
