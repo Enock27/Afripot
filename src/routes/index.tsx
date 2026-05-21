@@ -5,6 +5,7 @@ import { Marquee } from "@/components/Marquee";
 import { PageLoader } from "@/components/PageLoader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { PartnersSection } from "@/components/PartnersSection";
+import { FixedReservationButton } from "@/components/FixedReservationButton";
 import { useState, useEffect } from "react";
 import interiorStairs from "@/assets/Afri3.jpg";
 import dishPlate from "@/assets/afri2.jpg";
@@ -161,16 +162,7 @@ function Index() {
             </div>
           </div>
 
-          {/* Bottom bar */}
-          <div className="flex items-end justify-end pb-2 sm:pb-3 md:pb-4 lg:pb-6">
-            <Link
-              to="/contact"
-              className="flex items-center gap-2 sm:gap-2.5 md:gap-3 bg-gold text-gold-foreground pl-2.5 sm:pl-3 md:pl-4 lg:pl-5 pr-2 sm:pr-2.5 md:pr-3 lg:pr-4 py-1.5 sm:py-2 md:py-2.5 lg:py-3 text-[0.65rem] sm:text-xs md:text-sm tracking-[0.2em] uppercase rounded-full hover:bg-amber-600 transition-colors shadow-elegant"
-            >
-              <span>Reserveer een tafel</span>
-              <span className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 bg-gold-foreground/20 rounded-full flex items-center justify-center text-xs sm:text-sm">🎟</span>
-            </Link>
-          </div>
+          {/* Bottom bar - removed, using fixed button instead */}
         </div>
 
         {/* Vertical "AfriPot" badge on far right */}
@@ -186,7 +178,7 @@ function Index() {
             />
           </div>
           <div style={{ writingMode: "vertical-rl", letterSpacing: "0.05em" }} className="text-center">
-            <span className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm font-playful font-semibold block">AfriPot</span>
+            <span className="text-[8px] sm:text-[9px] md:text-xs lg:text-sm font-swanky font-semibold block">AfriPot</span>
             <span className="text-[7px] sm:text-[8px] md:text-[9px] lg:text-xs font-playful font-normal block mt-0.5">Cuisine</span>
           </div>
         </Link>
@@ -418,6 +410,7 @@ function Index() {
       </section>
 
       <SiteFooter />
+      <FixedReservationButton />
     </div>
   );
 }

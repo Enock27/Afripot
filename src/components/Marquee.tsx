@@ -58,7 +58,7 @@ export function Marquee({ items }: { items: string[] }) {
         {line1Items.map((item, i) => (
           <span 
             key={`line1-${i}`} 
-            className="font-sekuya text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl px-4 sm:px-6 md:px-8 lg:px-12 flex items-center gap-4 sm:gap-6 md:gap-8 text-outline-light"
+            className="font-slackey text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl px-4 sm:px-6 md:px-8 lg:px-12 flex items-center gap-4 sm:gap-6 md:gap-8 text-outline-light"
           >
             {item}
             <span className="inline-flex items-center justify-center w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full border border-gold/25 sm:border-2"></span>
@@ -78,7 +78,7 @@ export function Marquee({ items }: { items: string[] }) {
         {line2Items.map((item, i) => (
           <span 
             key={`line2-${i}`} 
-            className="font-sekuya text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl px-4 sm:px-6 md:px-8 lg:px-12 flex items-center gap-4 sm:gap-6 md:gap-8 text-outline-light"
+            className="font-slackey text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl px-4 sm:px-6 md:px-8 lg:px-12 flex items-center gap-4 sm:gap-6 md:gap-8 text-outline-light"
           >
             {item}
             <span className="inline-flex items-center justify-center w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full border border-gold/25 sm:border-2"></span>

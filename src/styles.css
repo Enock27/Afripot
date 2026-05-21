@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Gilda+Display&family=Allura&family=Caveat:wght@400;500;600;700&family=Cinzel:wght@400..900&family=Sekuya&family=Kalam:wght@300;400;700&family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Gilda+Display&family=Allura&family=Caveat:wght@400;500;600;700&family=Cinzel:wght@400..900&family=Sekuya&family=Kalam:wght@300;400;700&family=Indie+Flower&family=Slackey&family=Swanky+and+Moo+Moo&family=Notable&family=Major+Mono+Display&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -139,6 +139,8 @@
   .font-sekuya { font-family: var(--font-sekuya); }
   .font-kalam { font-family: var(--font-kalam); }
   .font-indie { font-family: var(--font-indie); }
+  .font-slackey { font-family: "Slackey", sans-serif; font-weight: 400; font-style: normal; }
+  .font-swanky { font-family: "Swanky and Moo Moo", cursive; font-weight: 400; font-style: normal; }
   .text-gold { color: var(--gold); }
   .bg-gradient-radial {
     background-image: radial-gradient(circle, var(--tw-gradient-stops));
@@ -440,4 +442,93 @@ html {
 
 .dish-image.active {
   animation: fadeInZoom 0.6s ease-out forwards;
+}
+
+
+/* Event Page Fonts */
+.notable-regular {
+  font-family: "Notable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.major-mono-display-regular {
+  font-family: "Major Mono Display", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Event animations */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(201, 160, 125, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(201, 160, 125, 0);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+/* Slide up animation */
+@keyframes slide-up-smooth {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up-smooth 0.8s ease-out 0.2s both;
 }

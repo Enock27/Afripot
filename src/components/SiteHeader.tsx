@@ -45,7 +45,7 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12">
-        <Link to="/" className="leading-none relative">
+        <Link to="/" className="leading-none relative flex items-center gap-2">
           <img src={logo} alt="Restaurant logo" className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain relative z-10" />
         </Link>
 
@@ -69,6 +69,7 @@ export function SiteHeader() {
           <nav className="mx-auto max-w-[1600px] flex flex-col px-4 sm:px-6 md:px-8 lg:px-12 py-6 sm:py-8 gap-3 sm:gap-5 text-xs sm:text-sm tracking-[0.25em] uppercase">
             <Link to="/" onClick={() => setOpen(false)} className="hover:text-gold transition-colors">Home</Link>
             <Link to="/menu" onClick={() => setOpen(false)} className="hover:text-gold transition-colors">Menu</Link>
+            <Link to="/events" onClick={() => setOpen(false)} className="hover:text-gold transition-colors">Events</Link>
             <Link to="/about" onClick={() => setOpen(false)} className="hover:text-gold transition-colors">About</Link>
             <Link to="/contact" onClick={() => setOpen(false)} className="hover:text-gold transition-colors">Contact</Link>
             <Link to="/contact" onClick={() => setOpen(false)} className="text-gold mt-2 sm:mt-3">Reserve a table →</Link>
