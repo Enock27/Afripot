@@ -3,8 +3,10 @@ services:
     name: restaurant-gem
     env: node
     plan: free
-    buildCommand: npm install && npm run build
+    buildCommand: SKIP_COMPONENT_TAGGER=true npm install && npm run build
     startCommand: node dist/server/index.js
     envVars:
       - key: NODE_ENV
         value: production
+      - key: SKIP_COMPONENT_TAGGER
+        value: "true"

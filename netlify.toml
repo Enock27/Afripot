@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "SKIP_COMPONENT_TAGGER=true npm install && npm run build"
   publish = "dist"
 
 [[redirects]]
