@@ -5,5 +5,11 @@ compatibility_date = "2024-01-01"
 pages_build_output_dir = "dist"
 
 [build]
-command = "npm run build"
+command = "bash build.sh"
 cwd = "."
+
+[env.production]
+name = "restaurant-gem-prod"
+routes = [
+  { pattern = "restaurant-gem.pages.dev", zone_name = "pages.dev" }
+]
