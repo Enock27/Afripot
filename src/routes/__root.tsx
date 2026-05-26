@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
 import { LenisProvider } from "@/components/LenisProvider";
 import { PageLoader } from "@/components/PageLoader";
 
@@ -48,30 +48,36 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
 
-function RootShell({ children }: { children: React.ReactNode }) {
+function RootComponent() {
   return (
     <html lang="en">
       <head>
-        <HeadContent />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>AfriPot Restaurant — Where Tradition Meets Taste</title>
+        <meta name="description" content="Experience authentic African cuisine where tradition meets taste." />
+        <meta property="og:title" content="AfriPot Restaurant — Authentic African Cuisine" />
+        <meta property="og:description" content="Where tradition meets taste." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Allura&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href={appCss} />
       </head>
       <body suppressHydrationWarning>
-        {children}
-        <Scripts />
+        <LenisProvider>
+          <PageLoader />
+          <Outlet />
+        </LenisProvider>
       </body>
     </html>
-  );
-}
-
-function RootComponent() {
-  return (
-    <LenisProvider>
-      <PageLoader />
-      <Outlet />
-    </LenisProvider>
   );
 }
