@@ -1,7 +1,19 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
-  "compatibility_date": "2025-09-24",
-  "compatibility_flags": ["nodejs_compat"],
-  "main": "@tanstack/react-start/server-entry",
+  "name": "restaurant-gem",
+  "type": "javascript",
+  "main": "dist/server/index.js",
+  "build": {
+    "command": "npm run build",
+    "cwd": "."
+  },
+  "env": {
+    "production": {
+      "routes": [
+        {
+          "pattern": "restaurant-gem.pages.dev",
+          "zone_name": "pages.dev"
+        }
+      ]
+    }
+  }
 }
