@@ -2,8 +2,6 @@ import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
 import { LenisProvider } from "@/components/LenisProvider";
 import { PageLoader } from "@/components/PageLoader";
 
-import appCss from "../styles.css?url";
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -27,57 +25,15 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AfriPot Restaurant — Where Tradition Meets Taste" },
-      { name: "description", content: "Experience authentic African cuisine where tradition meets taste." },
-      { property: "og:title", content: "AfriPot Restaurant — Authentic African Cuisine" },
-      { property: "og:description", content: "Where tradition meets taste." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Allura&display=swap",
-      },
-    ],
-  }),
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
 
 function RootComponent() {
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>AfriPot Restaurant — Where Tradition Meets Taste</title>
-        <meta name="description" content="Experience authentic African cuisine where tradition meets taste." />
-        <meta property="og:title" content="AfriPot Restaurant — Authentic African Cuisine" />
-        <meta property="og:description" content="Where tradition meets taste." />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Allura&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="stylesheet" href={appCss} />
-      </head>
-      <body suppressHydrationWarning>
-        <LenisProvider>
-          <PageLoader />
-          <Outlet />
-        </LenisProvider>
-      </body>
-    </html>
+    <LenisProvider>
+      <PageLoader />
+      <Outlet />
+    </LenisProvider>
   );
 }
